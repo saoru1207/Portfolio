@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* ーーーーーーーーーリセットCSSここまでーーーーーーーーー */
+/* ーーーーーーーーーここからスタイルシートーーーーーーーー */
+
+
+/* コンセプト */
+
+.mountain-inner{
+    /* width: 100vh; */
+    padding: 60px 0 60px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #e9ede4;
+    letter-spacing: .18em;
+}
+
+/* .concept-inner{
+    display: block;
+} */
+
+
+.mountain-title{
+    padding: 0 0 50px;
+    font-size: 1.6rem;
+    font-family: Cormorant, vdl-v7mincho, serif;
+    color: #52595a;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+    -webkit-font-smoothing: antialiased;
+}
+
+.mountain-msg{
+    line-height: 2;
+    font-size: 1rem;
+    color: #52595a;
+    word-break: keep-all;
+}
+
+/* ロケーション選択 スリック機能 */
+
+/*====================================================================
+slick
+====================================================================*/
+body {
+    background: #434B54;
+}
+
+.slider {
+    width: 90%;
+    margin: 0 auto 80px;
+}
+.slick-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.mypattern{
+    width: 100%;
+}
+
+.mypattern .slick-slide{
+    margin: 5px;
+}
+
+.mypattern .slick-slide:not(.slick-center) {
+    -webkit-filter: opacity(50%);
+    -moz-filter: opacity(50%);
+    -o-filter: opacity(50%);
+    -ms-filter: opacity(50%);
+    filter: opacity(50%);
+    transition: 0.2s linear;
+}
+
+
+/* ================= PLAN ボタン===============  */
+
+.jump-plan{
+    text-align: center;
+}
+
+.btn-border {
+    display: inline-block;
+    max-width: 180px;
+    text-align: left;
+    border: 2px solid #666;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: .4s;
+}
+
+.btn-border:hover {
+    background-color: #f7f7f7;
+    border-color: #666;
+    color: #000;
+}
+
+/* ============== コンタクト ================ */

@@ -1,0 +1,983 @@
+
+@charset "utf-8";
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* ーーーーーーーーーーーーーーーーーーーリセットcssここまでーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーここから記述ーーーーーーーーーーーーーーーーーーーーーーーー */
+
+body{
+    font-family: Cormorant Garamond, vdl-v7mincho, serif;
+    background: #434B54;
+}
+
+
+/* ========================================
+-----------------  ヘッダー --------------
+======================================== */
+
+.sp-navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background:#434B54;
+    z-index: 9999;
+    padding: 15px 12px;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+.sp-logo img{
+    position : absolute;
+    top: 0;
+    left: 10px;
+    height: 50px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* スマホメニュー */
+/*ハンバーガーボタン*/
+.hamburger {
+    display : block;
+    position: fixed;
+    z-index : 3;
+    right : 13px;
+    top   : 5px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+}
+.hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : #e9ede4;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+    top: 10px;
+}
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+.hamburger span:nth-child(3) {
+    top: 30px;
+}
+
+  /* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+}
+
+nav.globalMenuSp {
+    position: fixed;
+    z-index : 2;
+    top  : 0;
+    left : 0;
+    color: #52595a;;
+    background: #fff;
+    text-align: center;
+    transform: translateX(100%);
+    transition: all 0.6s;
+    width: 100%;
+}
+
+nav.globalMenuSp ul {
+    background: #ccc;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+nav.globalMenuSp ul li:hover{
+    background :#ddd;
+}
+
+nav.globalMenuSp ul li a {
+    display: block;
+    color: #52595a;
+    padding: 1em 0;
+    text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与 */
+nav.globalMenuSp.active {
+    transform: translateX(0%);
+}
+
+/* アコーディオンメニュー */
+nav.globalMenuSp ul.inner-child {
+    display: none;
+    background-color:#CEC1C1;
+}
+ul.inner-child-sp li{
+    margin: 0 auto;
+    color: #000;
+    /* border-bottom: 1px solid #fff; */
+}
+
+
+
+/* PC用のメニューは890以下は表示されない */
+@media screen and (max-width:890px){
+    .global-nav{
+        display:none;
+    }
+}
+
+
+
+/*ーーーーーーーーー pcメニュー ーーーーーーー */
+
+/* PC用メニュー891から出現 */
+@media screen and (min-width: 890px) { 
+
+.hamburger{
+    display: none;
+}
+
+.navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    top:0;
+    margin: 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+}
+
+.navbar li{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: .2em;
+}
+
+.navbar a:hover{
+    letter-spacing: .3em;
+    color:  rgba(219, 217, 190, 0.5);
+    transition: 0.8s;
+}
+
+.global-nav{
+    line-height: 50px;
+    z-index: 9999;
+    position: fixed;
+}
+
+/* アコーディオンメニュー */
+ul.inner-child {
+    display: none;
+    width: 120%;
+    background-color:rgba(0,0,0, 0.5);
+    text-align: center;
+}
+ul.inner-child li{
+    margin-right: 1rem;
+    margin-right: 1rem;
+    border-bottom: 1px solid #fff;
+}
+}
+
+
+/* ========================================
+------------main  ムービ-------------------
+======================================== */
+
+.main-movie{
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+video {
+    margin: 0;
+    box-sizing: border-box;
+    height: 57vw;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* width: 178vh; */
+}
+
+.main-text{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    line-height: 2;
+}
+
+.main-text h1{
+    font-family:P22 Zaner;
+}
+
+.main-text h2{
+    font-family:Cormorant Garamond, vdl-v7mincho, serif;
+    font-size: 1rem;
+    line-height: 1.3;
+    letter-spacing: .5em;
+    text-indent: .5em;
+    margin: 20px 0 10px 0;
+}
+
+.main-text h3{
+    font-family:Cormorant Garamond, vdl-v7mincho, serif;
+    font-size: 0.4rem;
+    letter-spacing: 0.5rem;
+    text-indent: 0.5rem;
+}
+
+.main-movie a{
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 0 50px;
+}
+
+/* main のスクロールボタン */
+/*スクロールボタンの指定*/
+.scroll{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+@keyframes move {
+    0% {
+        transform: rotate(45deg) translate(0, 0);
+    }
+    20% {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+    40% {
+        transform: rotate(45deg) translate(0, 0);
+    }
+}
+
+
+
+/* ========================================
+------------ contents　コンテンツ------------
+======================================== */
+
+/* ========================================
+------------ concept　コンセプト------------
+======================================== */
+
+/* ふわっと浮き上がらせる */
+.effect-fade {
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition : all 400ms;
+}
+    
+.effect-fade.effect-scroll {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+/* コンテンツ始まり */
+.content{
+    margin-top: 100vh;
+}
+/* コンセプト */
+
+.concept{
+    margin-top: 100vh;
+    padding: 60px 0 60px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #e9ede4;
+    letter-spacing: .18em;
+}
+
+/* .concept-inner{
+    display: block;
+} */
+
+
+.concept-title{
+    padding: 0 0 50px;
+    font-size: 1.6rem;
+    font-family: Cormorant, vdl-v7mincho, serif;
+    color: #52595a;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+    -webkit-font-smoothing: antialiased;
+}
+
+.concept-msg{
+    line-height: 2;
+    font-size: 1rem;
+    color: #52595a;
+    word-break: keep-all;
+}
+
+
+/* ========================================
+----------- ロケーション-バナ--  ------------
+======================================== */
+
+.location{
+    width: 100%;
+    height: 100%;
+}
+
+.banner{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+
+.banner h3{
+    font-size: 2rem;
+    margin-bottom: 0px;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    /* font-stretch:ultra-condensed; */
+}
+
+@media screen and (min-width: 768px) { 
+.banner h3{
+    font-size: 2rem;
+    margin: 0 auto;
+    color: #fff;
+    /* line-height: 1; */
+    letter-spacing: 0.8em;
+    /* ▼ズレた分をセンターに戻す */
+    text-indent: 0.8em;
+}
+}
+
+.banner a{
+    text-decoration: none;
+}
+
+
+.bnr-btn{
+    width: 100px;
+    margin: 0 auto;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px 25px;
+    border: 2px solid #fff;
+}
+
+/* クリックボタンの表示が大きくなる */
+/*  Click Here ボタン 768から〜 */
+@media screen and (min-width:768px){
+.bnr-btn{
+    width: 180px;
+    margin: 0 auto;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 80px;
+    border: 3px solid #fff;
+    letter-spacing: 0.4em;
+}
+}
+
+.bnr-btn:hover{
+    color: #ffffff;
+    background-color:rgba(0,0,0, 0.5); 
+    text-shadow: 0 0 10px rgba(0,0,0, 0.5);
+    cursor: pointer;
+    letter-spacing: 0.6em;
+}
+
+.bnr-mountain{
+    background: url(../image/mountain-sp.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    margin: 0px;
+    padding: 100px 0;
+}
+
+.bnr-sea{
+    background: url(../image/sea-sp.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    margin: 0px;
+    padding: 100px 0;
+    }
+
+    .bnr-special{
+    background: url(../image/special-sp.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    margin: 0px;
+    padding: 100px 0;
+    }
+
+    .bnr-city{
+    background: url(../image/city-sp.jpg)  center;
+    background-size: cover;
+    width: 100%;
+    margin: 0px;
+    padding: 100px 0;
+    }
+
+/*  画面サイズ641からここを表示↓ */
+@media screen and (min-width: 641px) { 
+    .bnr-mountain{
+    background: url(../image/mountain.jpg) no-repeat center;
+    background-size: cover;
+    padding: 12% 0;
+    }
+
+    .bnr-sea{
+    background: url(../image/sea.jpg) no-repeat center;
+    background-size: cover;
+    padding: 12% 0;
+    }
+
+    .bnr-special{
+    background: url(../image/special.jpg) no-repeat center;
+    background-size: cover;
+    padding: 12% 0;
+    }
+
+    .bnr-city{
+    background: url(../image/city.jpg) no-repeat center;
+    background-size: cover;
+    padding: 12% 0;
+    }
+}
+
+/* ========================================
+----------- プラン  -バナ--  ------------
+======================================== */
+
+
+.plan{
+    z-index: 200;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+
+.plan h3{
+    font-size: 2rem;
+    margin-bottom: 0px;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+}
+
+/* 768pxから表示 */
+@media screen and (min-width: 768px) { 
+.plan h3{font-size: 2rem;
+        margin: 0 auto;
+        color: #fff;
+        /* line-height: 1; */
+        letter-spacing: 0.8em;
+        text-indent: 0.8em;
+}
+}
+
+/* =====================================
+-----------------プラン------------------
+======================================== */
+
+.bnr-plan{
+    background: url(../image/plan-sp.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    margin: 0px;
+    padding: 100px 0;
+}
+
+@media screen and (min-width:641px) {
+    .bnr-plan{
+        background: url(../image/plan.jpg) no-repeat center;
+    background-size: cover;
+    padding: 12% 0;
+    }
+}
+
+
+/* =====================================
+----------------- NEWS  ----------------
+======================================== */
+
+.news{
+    width: 90%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.news h2{
+    font-family:Cormorant, vdl-v7mincho, serif;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fff;
+    letter-spacing: .5em;
+    text-indent: .5em;
+    margin: 30px 0;
+    font-weight: 500;
+}
+
+.msr_newslist02 {
+    width: 100%;
+}
+.msr_newslist02 li {
+    list-style: none;
+    font-size: 14px;
+    background-color: #F3F3F3;
+}
+.msr_newslist02 li:nth-child(odd) {
+    background-color: #E6E6E6;
+}
+.msr_newslist02 li a {
+    box-sizing: border-box;
+    color: #434B54;;
+    display: table;
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    width: 100%;
+}
+.msr_newslist02 li a:hover {
+    text-decoration: none;
+    background-color: #FDFDFD;
+}
+
+.msr_newslist02 li div {
+    display: table-cell;
+    width: 144px;
+}
+.msr_newslist02 li p {
+    display: table-cell;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+  /* 枠の中の時間の設定 */
+.msr_newslist02 li time {
+    display: table-cell;
+    vertical-align: top;
+    width: 90px;
+}
+
+  /* カテゴリの設定 */
+.msr_newslist02 li .cat01,
+.msr_newslist02 li .cat02 {
+    background-color: #997B60;
+    border-radius: 1px;
+    color: #FFFFFF;
+    font-size: 9px;
+    padding: 0 2px;
+    text-align: center;
+    width: 50px;
+}
+.msr_newslist02 li .cat02 {
+    background-color:#CEC1C1;;
+}
+
+/* =====================================
+----------------コンタクト ---------------
+======================================== */
+
+/* コンタクトの蘭↓ */
+.contact  {
+    background: #fff;
+    width: 78%;
+    margin: 5%;
+    padding: 6% 6% 0% 6%;
+}
+
+@media screen and (min-width: 768px) { 
+.contact{
+        padding: 2%;
+        margin: 2%;
+        width: 92%;
+        vertical-align: top;
+}
+}
+
+/* コンタクトの蘭左 */
+.cbox-info {
+    width: 100%;
+    padding: 0;
+    display: block;
+    border-right: none;
+}
+
+@media screen and (min-width: 768px) { 
+.contact-info{
+    width: 30%;
+    padding: 0 3%;
+    display: table-cell;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+}
+}
+
+.contact-info h2 {
+    width: 50%;
+    margin: 5% auto 0% auto;
+}
+.contact-info p.info-txt {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 10px;
+    margin: 7% 0 10% 0;
+}
+
+/* コンタクト真ん中の蘭 */
+
+.contact-mid {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 5% 0 10% 0;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+.contact-mid{
+    width:30%;
+    padding: 0 3%;
+    display: table-cell;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-top:none;
+    border-bottom:none;
+}
+}
+.contact-mid p.cbox-tit{
+    padding: 3%;
+    margin: 2%;
+    line-height: 1rem;
+}
+
+.contact-mid p.cont a {
+    border: 1px solid #333;
+    font-weight: bold;
+    padding: 5%;
+    display: block;
+    width: 90%;
+    font-size: 14px;
+    margin-bottom: 3%;
+    border-radius: 50px;
+    background-size: 6px;
+    text-decoration: none;
+    color:#434B54;
+}
+
+.contact-mid span {
+    display: block;
+    font-size: 9px!important;
+    padding: 5px 0 5px;
+}
+
+.contact-mid p.hosoku {
+    padding: 3%;
+    display: block;
+    width: 90%;
+    font-size:13px;
+    margin-bottom: 3%;
+}
+
+/* コンタクトーーーメニューーー */
+
+.contact-menu{
+    padding: 10% 0 5% 0;
+    margin-bottom: 2%;
+}
+
+@media screen and (min-width: 768px) { 
+.contact-menu{
+    width: 30%;
+    padding: 0 3%;
+    display: table-cell;
+    vertical-align: top;
+}
+}
+
+.contact-menu .tit {
+    padding: 5px 0 5px;
+    text-align: center;
+    color: #333;
+    font-size: 10px;
+}
+
+.contact-menu a{
+    color:#434B54;
+}
+
+.contact-menu ul li.clm1 {
+    background: #f7f7f7 ;
+    background-size: 4px;
+}
+
+.contact-menu ul li.clm1 a {
+    font-size: 10px;
+    padding: 5%;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.contact-menu ul li.clm2 {
+    background: #f7f7f7;
+    background-size: 4px;
+}
+
+.contact-menu ul li.clm2 a {
+    font-size: 10px;
+    padding: 8%;
+    text-align: left;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.contact-menu ul li.clm2 {
+    width: 49%;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    text-align: left;
+}
+
+.cf:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+ul.cf li{
+        list-style: none;
+    }
+
+
+/* =====================================
+----------------フッター ---------------
+======================================== */
+
+footer{
+    background: #434B54;
+    width: 100%;
+    margin: 0;
+    padding: 1% 0;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5%;
+    font-size: 12px;
+    color: #999;
+}
+.footer-sns-tit{
+    font-family:Cormorant Garamond, vdl-v7mincho, serif;
+    letter-spacing: .3rem;
+    text-indent: .3rem;
+    font-size: .8rem;
+    padding: 20px;
+}
+
+.sns-menu li{
+    display: inline-block;
+    margin: 0 auto 0 auto;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.sns-menu a{
+    color: #999;
+    margin: 30px;
+}
+
+.footer-area-tit{
+    padding: 1%;
+}
+
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+/* /* ページTOPにもどるボタン */
+.ScrollTop {
+    position: fixed;
+    font-size: 2rem;
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+    text-decoration: none;
+    opacity: 0;
+    transition: all 0.65s;
+}
+.ScrollTop.isActive {
+    opacity: 1;
+    transition: all 0.65s;
+}   
